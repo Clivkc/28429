@@ -1,24 +1,29 @@
+<%@page pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>文件上传</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dropzone/dist/min/dropzone.min.css">
-</head>
-<body>
-    <form action="/upload" class="dropzone"></form>
-    <script src="https://cdn.jsdelivr.net/npm/dropzone"></script>
-    <script>
-        Dropzone.options.myDropzone = {
-            paramName: "file",
-            maxFilesize: 2,
-            acceptedFiles: ".jpg,.png,.gif",
-            init: function() {
-                this.on("success", function(file, response) {
-                    console.log(response);
-                });
-            }
-        };
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form method="post" action="./recvfile"
+              enctype="multipart/form-data">
+            <label>文本域:</label>
+            <input type="text" name="textfield"/>
+            <br/>
+
+            <label>单文件:</label>
+            <input type="file" name="single"/>
+            <br/>
+
+            <label>多文件:</label>
+            <input type="file" name="multi" multiple/>
+            <br/>
+
+            <label>没文件:</label>
+            <input type="file" name="empty"/>
+            <br/>
+
+            <button type="submit">提交</button>
+        </form>
+    </body>
 </html>
