@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网络实时状态</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .signal {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        .signal-bar {
+            width: 22px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .signal-bar div {
+            width: 100%;
+            border-radius: 3px;
+        }
+
+        .signal-bar:nth-child(1) div {
+            height: 20px;
+        }
+
+        .signal-bar:nth-child(2) div {
+            height: 46px;
+        }
+
+        .signal-bar:nth-child(3) div {
+            height: 72px;
+        }
+
+        .signal-bar:nth-child(4) div {
+            height: 100px;
+        }
+
+        .noSignal {
+            position: absolute;
+            bottom: -20px;
+            right: -10px;
+            padding: 5px 10px;
+            color: red;
+            display: none;
+            background-color: #f8d7da;
+            border: 1px solid #dc3545;
+            border-radius: 3px;
+        }
+
+        .detail {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        .detail>div {
+            margin-bottom: 10px;
+        }
+
+        .detail>div:last-child {
+            margin-bottom: 0;
+        }
+
+        .cmd {
+            width: 800px;
+            height: 40px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+            white-space: nowrap;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>网络实时状态</h1>
+        <div class="signal">
+            <div class="signal-bar">
+                <div style="background-color: #4CAF50;"></div>
+            </div>
+            <div class="signal-bar">
+                <div style="background-color: #4CAF50;"></div>
+            </div>
+            <div class="signal-bar">
+                <div style="background-color: #4CAF50;"></div>
+            </div>
+            <div class="signal-bar">
+                <div style="background-color: #4CAF50;"></div>
+                <div class="noSignal">无信号</div>
+            </div>
+        </div>
+        <div class="detail">
+            <div>IP地址：192.168.0.1</div>
+            <div>子网掩码：255.255.255.0</div>
+            <div>网关：192.168.0.1</div>
+            <div>DNS服务器：8.8.8.8</div>
+        </div>
+        <div class="cmd">
+            > ping 1.1.1.1
+        </div>
+    </div>
+</body>
+
+</html>

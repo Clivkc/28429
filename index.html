@@ -8,6 +8,41 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            padding: 20px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    
+        .box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    
+        /* 其他样式 */
+    
+    </style>
+    <!--芜湖-->
+    <script>
+        function setBackgroundImage() {
+            fetch('https://t.alcy.cc/fj')
+                .then(function(response) {
+                    document.body.style.backgroundImage = 'url(' + response.url + ')';
+                })
+                .catch(function(error) {
+                    console.error('Error fetching background image:', error);
+                });
+        }
+    
+        setBackgroundImage();
+    </script>
+    <!--芜湖114-->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             padding: 20px;
         }
@@ -59,7 +94,7 @@
             color: red;
             display: none;
             background-color: #f8d7da;
-            border: 1px solid #f5c6cb;
+            border: 1px solid #dc3545;
             border-radius: 3px;
         }
     
@@ -67,6 +102,15 @@
             margin-bottom: 20px;
             padding: 10px;
             background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+    
+        .detail>div {
+            margin-bottom: 10px;
+        }
+    
+        .detail>div:last-child {
+            margin-bottom: 0;
         }
     
         .cmd {
@@ -78,6 +122,10 @@
             padding: 10px;
             border-radius: 5px;
             font-family: monospace;
+        }
+    
+        .cmd>div {
+            margin-bottom: 4px;
         }
     </style>
     <!--分割-->
